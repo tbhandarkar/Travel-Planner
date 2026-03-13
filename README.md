@@ -103,6 +103,66 @@ This project was built purely for **learning and educational purposes**. It demo
 
 ---
 
-## Setup
+## Deployment
 
-See [SETUP.md](./SETUP.md) for full installation and configuration instructions.
+### Hosting Platform — Vercel (recommended)
+
+This app is deployed using **[Vercel](https://vercel.com)** — the hosting platform built by the Next.js team. Vercel is free for personal projects and provides a live public URL with zero server configuration.
+
+**Live URL format:**
+```
+https://travel-planner-tbhandarkar.vercel.app
+```
+
+### How Deployment Works
+
+Every time code is pushed to the `main` branch on GitHub, Vercel **automatically detects the change and redeploys** the app. No manual steps needed after the initial setup.
+
+```
+Local code change
+      ↓
+git push to GitHub (main branch)
+      ↓
+Vercel detects the push automatically
+      ↓
+Runs: npm run build
+      ↓
+Deploys updated app live
+```
+
+### Deploying to Vercel (first time)
+
+1. Go to **https://vercel.com** and sign up with your GitHub account
+2. Click **"Add New Project"** → select this repository
+3. Add the following **Environment Variables** in the Vercel dashboard before deploying:
+
+| Variable | Description |
+|----------|-------------|
+| `OPENAI_API_KEY` | Your OpenAI secret key |
+| `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Your Google Maps API key |
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your Supabase anon public key |
+
+4. Click **"Deploy"** — the app goes live in ~2 minutes
+
+### Cost Breakdown
+
+| Service | Free Tier | Paid When |
+|---------|-----------|-----------|
+| Vercel (hosting) | ✅ Free for personal use | Commercial scale |
+| Supabase (DB + Auth) | ✅ 500MB DB, 50K users | Large scale |
+| Google Maps | ✅ $200/month free credit | High traffic |
+| OpenAI GPT-4o | ❌ Pay per use | Every itinerary generated (~$0.01–$0.05 each) |
+| Custom domain | ✅ Not required | Optional (~$12/year) |
+
+> You can run this app in production at **$0/month** for small personal use. The only cost is OpenAI usage.
+
+### Alternative Hosting — Netlify
+
+This app can also be deployed on **[Netlify](https://netlify.com)** using the included `netlify.toml` config file. The setup process is identical — connect GitHub, add environment variables, and deploy.
+
+---
+
+## Local Setup
+
+See [SETUP.md](./SETUP.md) for full local installation and configuration instructions.
