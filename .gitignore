@@ -1,6 +1,9 @@
 # VS Code local history (may contain .env backups)
 .history/
 
+# Personal notes
+Notes.txt
+
 # Dependencies
 node_modules/
 .pnp
